@@ -1,0 +1,12 @@
+name: "OpenAPI Validation"
+description: "Tests an OpenAPI spec for TypeScript transpilation"
+inputs:
+  filePath:
+    description: "Path to OpenAPI file"
+    required: true
+    default: "api.yaml"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.filePath }}
